@@ -9,6 +9,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     TextView timeText, scoreText;
+    int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,12 +18,14 @@ public class MainActivity extends AppCompatActivity {
 
         timeText = findViewById(R.id.timeText);
         scoreText = findViewById(R.id.scoreText);
+        score = 0;
 
     }
 
     public void increaseScore(View view) {
 
-
+        score++;
+        scoreText.setText("Score: " + score);
 
     }
 

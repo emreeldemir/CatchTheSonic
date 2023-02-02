@@ -8,16 +8,15 @@
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="366dp"
-        android:layout_height="431dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="365dp"
+        android:layout_height="426dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/scoreText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/timeText">
 
         <ImageView
             android:id="@+id/imageView"
@@ -105,21 +104,28 @@
 
     <TextView
         android:id="@+id/timeText"
-        android:layout_width="150dp"
-        android:layout_height="35dp"
+        android:layout_width="154dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="43dp"
         android:text="Time: 10"
         android:textAlignment="center"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="28dp" />
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/scoreText"
         android:layout_width="137dp"
-        android:layout_height="41dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="40dp"
         android:text="Score: 0"
         android:textAlignment="center"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="535dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
