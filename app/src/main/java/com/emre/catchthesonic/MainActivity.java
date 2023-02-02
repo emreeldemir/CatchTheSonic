@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         imageArray = new ImageView[] {imageView, imageView2, imageView3, imageView4, imageView5,
                                       imageView6, imageView7, imageView8, imageView9};
 
+        hideImages();
+
         score = 0;
 
         new CountDownTimer(10000, 1000) {
@@ -58,6 +60,14 @@ public class MainActivity extends AppCompatActivity {
 
         score++;
         scoreText.setText("Score: " + score);
+
+    }
+
+    public void hideImages() {
+
+        for (ImageView image: imageArray) {
+            image.setVisibility(View.INVISIBLE);
+        }
 
     }
 
