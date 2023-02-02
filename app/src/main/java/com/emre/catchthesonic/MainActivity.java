@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
                 imageArray[i].setVisibility(View.VISIBLE);
 
-                handler.postDelayed(this, 400);
+                handler.postDelayed(this, 500);
             }
         };
 
