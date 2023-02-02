@@ -57,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
 
+                timeText.setText("Time off!");
+                handler.removeCallbacks(runnable);
+
+                for (ImageView image: imageArray) {
+                    image.setVisibility(View.INVISIBLE);
+                }
+
+
             }
         }.start();
 
