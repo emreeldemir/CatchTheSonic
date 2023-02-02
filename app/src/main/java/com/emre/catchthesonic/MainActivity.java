@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
               imageView7, imageView8, imageView9;
 
     ImageView[] imageArray;
+
+    Handler handler;
+    Runnable runnable;
     int score;
 
     @Override
@@ -42,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         score = 0;
 
-        new CountDownTimer(10000, 1000) {
+        new CountDownTimer(15000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timeText.setText("Time: " + millisUntilFinished/1000);
@@ -65,9 +71,28 @@ public class MainActivity extends AppCompatActivity {
 
     public void hideImages() {
 
-        for (ImageView image: imageArray) {
-            image.setVisibility(View.INVISIBLE);
-        }
+        handler = new Handler();
+
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+
+                for (ImageView image: imageArray) {
+                    image.setVisibility(View.INVISIBLE);
+                }
+
+                Random random = new Random();
+                int i = random.nextInt(9);
+
+                imageArray[i].setVisibility(View.VISIBLE);
+
+                handler.postDelayed(this, 400);
+            }
+        };
+
+        handler.post(runnable);
+
+
 
     }
 
