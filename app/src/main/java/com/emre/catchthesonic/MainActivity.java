@@ -1,7 +1,9 @@
 package com.emre.catchthesonic;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -63,6 +65,26 @@ public class MainActivity extends AppCompatActivity {
                 for (ImageView image: imageArray) {
                     image.setVisibility(View.INVISIBLE);
                 }
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+
+                alert.setTitle("Restart?");
+                alert.setMessage("Are you sure to restart the game?");
+
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
 
 
             }
