@@ -4,6 +4,6 @@ The "Sonic" on the screen randomly changes places. There is a timer in the game.
 
 ---
 
-*Game Gif:*
+*Gameplay Gif:*
 
 <img src="gamePlayRecord.gif" width="250" height="500">
